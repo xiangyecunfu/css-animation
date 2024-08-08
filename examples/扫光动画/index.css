@@ -1,0 +1,86 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #17c79e;
+}
+
+.container {
+  .box {
+    width: 400px;
+    height: 200px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 80px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+    line-height: 200px;
+    text-align: center;
+    font-size: 60px;
+    font-family: '新宋体';
+    font-weight: normal;
+    color: #9747FF;
+  }
+  .example-1 {
+    -webkit-text-fill-color: transparent;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0) 60%) -100% / 50% no-repeat currentColor;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: shark-txt 2s infinite;
+  }
+  .example-2 {
+    img {
+      width: 100%;
+      display: block;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      inset: -20%;
+      background: linear-gradient(45deg, rgba(255,255,255,0) 40%, rgba(255, 255, 255, 0.7), rgba(255,255,255,0) 60%);
+      animation: shark-wrap 2s infinite;
+      transform: translateX(-100%);
+    }
+  }
+  .example-3 {
+    display: flex;
+    .card {
+      width: 220px;
+      height: 208px;
+      -webkit-mask: url(https://imgservices-1252317822.image.myqcloud.com/coco/s09252023/3af9e8de.00uqxe.png) 0 0/100%;
+      mask: url(https://imgservices-1252317822.image.myqcloud.com/coco/s09252023/3af9e8de.00uqxe.png) 0 0/100%;
+      &::after {
+        content: '';
+        position: absolute;
+        inset: -20%;
+        background: linear-gradient(45deg, rgba(255,255,255,0) 40%, rgba(255, 255, 255, 0.7), rgba(255,255,255,0) 60%);
+        animation: shark-wrap 2s infinite;
+        transform: translateX(-100%);
+      }
+    }
+  }
+}
+
+@keyframes shark-txt {
+  0% {
+    background-position: -100%;
+  }
+  100% {
+    background-position: 200%;
+  }
+}
+
+@keyframes shark-wrap {
+  to {
+    transform: translateX(100%);
+  }
+}
